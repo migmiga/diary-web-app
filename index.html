@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Diary</title>
+    <meta name="description" content="A beautiful responsive diary web application.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header glass-panel">
+            <h1>My Diary</h1>
+            <button id="addEntryBtn" class="btn primary-btn">+ 새 일기 쓰기</button>
+        </header>
+
+        <main class="main-content">
+            <div id="entriesGrid" class="entries-grid">
+                <!-- Entries will be injected here via JS -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for new entry -->
+    <div id="entryModal" class="modal-overlay">
+        <div class="modal glass-panel">
+            <div class="modal-header">
+                <h2>새로운 일기</h2>
+                <button id="closeModalBtn" class="close-btn">&times;</button>
+            </div>
+            <form id="entryForm" class="entry-form">
+                <div class="form-group">
+                    <label for="entryTitle">제목</label>
+                    <input type="text" id="entryTitle" required placeholder="오늘의 제목을 적어주세요.">
+                </div>
+                <div class="form-group">
+                    <label for="entryMood">기분</label>
+                    <div class="mood-selector">
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="😃" checked>
+                            <span class="emoji">😃</span>
+                        </label>
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="😌">
+                            <span class="emoji">😌</span>
+                        </label>
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="😢">
+                            <span class="emoji">😢</span>
+                        </label>
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="😡">
+                            <span class="emoji">😡</span>
+                        </label>
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="🤩">
+                            <span class="emoji">🤩</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="entryContent">내용</label>
+                    <textarea id="entryContent" rows="6" required placeholder="오늘 하루는 어땠나요? 자세히 기록해보세요."></textarea>
+                </div>
+                <button type="submit" class="btn submit-btn">저장하기</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
